@@ -1,0 +1,33 @@
+body {
+  margin:0;
+  width:100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  background-size: cover;
+  background-color:#000000;
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+.background-text {
+  font-size: 200px;
+  letter-spacing: 20px;
+
+  color:transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  background-image: url("3c55892674bd88431fd0d9b611e96e65c91802a128596bf3bcd6ca6c4aa2d5c7");
+  background-size: 120%;  
+  animation: bg-animation 30s cubic-bezier(0.3,0,0.7,1) infinite;
+}
+@keyframes bg-animation {
+  0% {background-position: 50% 50%;}
+  33% {background-position: 100% 100%;}
+  66% {background-position: 0% 0%;}
+  100% {background-position: 50% 50%;}
+}

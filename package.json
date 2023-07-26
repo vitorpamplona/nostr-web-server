@@ -1,0 +1,17 @@
+{
+  "name": "amethyst-web-server",
+  "version": "0.0.1",
+  "description": "Amethyst's Web Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitor Pamplona",
+  "license": "MIT",
+  "dependencies": {
+    "@nostr-dev-kit/ndk": "^0.7.7",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
