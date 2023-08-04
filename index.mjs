@@ -14,7 +14,8 @@ const defaultRelays = [
     'wss://nostr-pub.wellorder.net',
     'wss://nostr.mom',
     'wss://nos.lol',
-    'wss://relay.mostr.pub'
+    'wss://relay.mostr.pub',
+    'wss://relay.damus.io'
 ]
 
 const ndk = new NDK({ explicitRelayUrls: defaultRelays });
