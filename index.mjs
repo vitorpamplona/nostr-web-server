@@ -18,9 +18,13 @@ const defaultRelays = [
     'wss://relay.damus.io'
 ]
 
-const ndk = new NDK({ explicitRelayUrls: defaultRelays });
+var ndk = null
 
 app.get('/e/:idHex', async (req, res) => {
+    if (ndk == null) {
+        connect()
+    }
+
     let event = await ndk.fetchEvent(req.params.idHex);
 
     if (event) {
@@ -53,4 +57,21 @@ app.listen(port, () => {
     console.log("Listening to port" + port)
 })
 
-await ndk.connect();
+var myTimeout = null
+function connect() {
+    if (ndk != null) return
+
+    if (myTimeout) {
+        clearTimeout(myTimeout)
+    }
+
+    ndk = new NDK({ explicitRelayUrls: defaultRelays });
+    ndk.connect().catch((e) => {
+        ndk = null
+        console.error("Disconnecting", e);
+        myTimeout = setTimeout(() => { connect() }, 10_000)
+    });
+}
+
+
+connect()
